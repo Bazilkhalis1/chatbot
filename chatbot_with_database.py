@@ -3,6 +3,7 @@ from openai import OpenAI
 import gradio as gr
 import mysql.connector
 
+os.environ["OPENAI_API_KEY"] = "your api key"
 
 # Set your MySQL database connection details
 db_config = {
@@ -32,7 +33,7 @@ def save_chat_to_database(user_input, ai_response):
         connection.close() 
 
 client = OpenAI()
-OpenAI.api_key = os.getenv("OPENAI_API_KEY")
+
 
 def chat_with_gpt(user_prompt):
     # Craft a more engaging, conversational prompt
